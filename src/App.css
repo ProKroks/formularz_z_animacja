@@ -2,37 +2,140 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  font-family: Arial, sans-serif;
+  background-image: url("/public/kot.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: rgba(57, 56, 56, 0.7);
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px #1b191b;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.form-header {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  margin-bottom: 20px;
+}
+
+.form-header h1 {
+  font-size: 35px;
+  color: #ddd8dc;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  margin: 0;
+  font-weight: bold;
+}
+.form-group {
+  margin-bottom: 20px;
+}
+label {
+  display: block;
+  font-size: 16px;
+  color: #ddd3d3;
+  margin-bottom: 5px;
+}
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="number"],
+select {
+  width: 98%;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  font-size: 16px;
+  margin-top: 10px;
+  background-color: #dfd6dd;
+  color: #ce2135;
+  margin-left: auto;
+  margin-right: auto;
+}
+input[type="text"]:-webkit-autofill,
+input[type="email"]:-webkit-autofill,
+input[type="tel"]:-webkit-autofill,
+input[type="number"]:-webkit-autofill,
+select:-webkit-autofill {
+  box-shadow: 0 0 0 30px #dfd6dd inset;
+  -webkit-text-fill-color: #ce2135 !important;
+}
+input[type="tel"] {
+  width: 98%;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  font-size: 16px;
+  margin-top: 10px;
+  background-color: #d5c7d3;
+  color: #ce2135;
+}
+input[type="number"] {
+  width: 98%;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  font-size: 16px;
+  margin-top: 10px;
+  background-color: #c9bcc6;
+  color: #ce2135;
+}
+select {
+  width: 100%;
+}
+button[type="submit"] {
+  background-color: #d7cbd5;
+  color: coral;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 16px;
+  border-radius: 10px;
+}
+button[type="submit"]:hover {
+  background-color: #ce2135;  
+}
+button[type="reset"] {
+  background-color: #e9e0e7;
+  color: coral;
+  font-size: 16px;
+  border-radius: 10px;
+}
+button[type="reset"]:hover {
+  background-color: #ce2135;
+}
+@media (max-width: 768px) {
+  .contact-info {
+    font-size: 14px;
+  }
+}
+#gender {
+  width: 101%;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  font-size: 16px;
+  margin-top: 10px;
+  background-color: #ddd4db;
+  color: #ce2135;
+  margin-left: auto;
+  margin-right: auto;
+}
+footer {
   color: white;
+  background-color: #c9c3c3;
+  padding: 20px;
+  text-align: left;
 }
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+footer h2 {
+  color: white;
+  font-size: 18px;
+  text-align: center;
 }
