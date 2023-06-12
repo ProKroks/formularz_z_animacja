@@ -171,7 +171,7 @@ const App = () => {
             required
           />
         </div>
-        <div className="form-group"> podwójny ?
+        <div className="form-group"> 
           <button type="submit">Zapisz się</button>
           <button type="reset" onClick={handleReset}>Resetuj</button>
         </div>
