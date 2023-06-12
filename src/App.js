@@ -171,12 +171,12 @@ const App = () => {
             required
           />
         </div>
-        git <div className="form-group">
+        <div className="form-group"> podwójny ?
           <button type="submit">Zapisz się</button>
           <button type="reset" onClick={handleReset}>Resetuj</button>
         </div>
       </form>
-      <footer className="contact-info">
+      <footer className="contact-info"> 
         <h3>Kontakt</h3>
         <p>Telefon: +48 221 666 212</p>
         <p>Email: Bootcamp@gmail.com</p>
