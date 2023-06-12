@@ -55,6 +55,18 @@ const App = () => {
     setCountry('');
   };
 
+  const handleReset = () => {
+    setName('');
+    setEmail('');
+    setPhoneNumber('');
+    setAge('');
+    setGender('');
+    setSchool('');
+    setCity('');
+    setCountry('');
+  };
+
+
   return (
     <div className="container">
       {/* <div className="form-header"> */}
@@ -159,9 +171,9 @@ const App = () => {
             required
           />
         </div>
-        <div className="form-group">
+        git <div className="form-group">
           <button type="submit">Zapisz się</button>
-          <button type="reset">Resetuj</button>
+          <button type="reset" onClick={handleReset}>Resetuj</button>
         </div>
       </form>
       <footer className="contact-info">
