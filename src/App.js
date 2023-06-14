@@ -11,6 +11,7 @@ const App = () => {
   const [school, setSchool] = useState('');
   const [city, setCity] = useState('');
   const [country, setCountry] = useState('');
+  const [formSubmitted, setFormSubmitted] = useState(false); // New state for form submission
 
   const handlePhoneNumberChange = (event) => {
     const inputPhoneNumber = event.target.value.replace(/[^0-9]/g, '');
@@ -32,19 +33,19 @@ const App = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-
-    // Tworzenie łańcucha znaków z danymi do zapisu
-    const data = `Imię i nazwisko: ${name}\nAdres e-mail: ${email}\nNumer telefonu: ${phoneNumber}\nWiek: ${age}\nPłeć: ${gender}\nNazwa szkoły: ${school}\nMiasto: ${city}\nKraj: ${country}\n`;
-
-    // Tworzenie elementu do pobrania pliku txt
-    const element = document.createElement('a');
-    const file = new Blob([data], { type: 'text/plain' });
-    element.href = URL.createObjectURL(file);
-    element.download = 'dane.txt';
-    document.body.appendChild(element);
-    element.click();
-
-    // Resetowanie formularza po zapisie danych
+    // Do something with the form data, e.g., log it to the console
+    console.log({
+      name,
+      email,
+      phoneNumber,
+      age,
+      gender,
+      school,
+      city,
+      country
+    });
+    setFormSubmitted(true); // Set formSubmitted to true on successful submission
+    // Reset the form fields after successful submission
     setName('');
     setEmail('');
     setPhoneNumber('');
@@ -64,19 +65,14 @@ const App = () => {
     setSchool('');
     setCity('');
     setCountry('');
+    setFormSubmitted(false); // Reset formSubmitted state on form reset
   };
-
-
   return (
     <div className="container">
-      {/* <div className="form-header"> */}
-      {/* <h1>Formularz rejestracyjny na szkołę letnią</h1>
-      </div> */}
       <div>
-        <Opis></Opis>
+        <Opis />
       </div>
-
-      <form action="#" method="post" onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit}>
         <div className="form-group">
           <label htmlFor="name">Imię i nazwisko:</label>
           <input
@@ -171,12 +167,21 @@ const App = () => {
             required
           />
         </div>
-        <div className="form-group"> 
+        <div className="form-group">
           <button type="submit">Zapisz się</button>
-          <button type="reset" onClick={handleReset}>Resetuj</button>
+          <button type="reset" onClick={handleReset}>
+            Resetuj
+          </button>
         </div>
       </form>
-      <footer className="contact-info"> 
+
+      {formSubmitted && (
+        <div className="form-submitted">
+          <p>Formularz został wysłany!</p>
+        </div>
+      )}
+
+      <footer className="contact-info">
         <h3>Kontakt</h3>
         <p>Telefon: +48 221 666 212</p>
         <p>Email: Bootcamp@gmail.com</p>
