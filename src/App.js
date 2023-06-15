@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
 import Opis from './Opis';
-
+// wersja online
 const App = () => {
   const [phoneNumber, setPhoneNumber] = useState('');
   const [name, setName] = useState('');
